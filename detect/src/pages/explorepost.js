@@ -1,50 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import '../components/css/post.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from "react-router-dom";
-const Space =()=>{
-    const {id}=useParams();
-    const [space, setSpace] = React.useState(null);
-    const [posts,setPost] = React.useState([]);
-    console.log(id);
+import { Exp } from "@tensorflow/tfjs-core";
+const Explore =()=>{
+    const {spaceid, postid}=useParams();
+    const [post,setPost]= useState(null);
+  //  console.log(id);
     React.useEffect(() => {
-      fetch("/getspace/"+id)
+      fetch("/getpost/"+postid)
         .then((res) => res.json())
         .then((data) => {
-            setSpace(data.space)
-            setPost(data.posts)
+            setPost(data.post)
         });
     }, []);
-    
 
-    console.log(posts)
+    const [comment, setComment]=useState(null);
+    const handleInputChange = (event) => {
+       const { value} = event.target;
+       setComment(value);
+     }
+    const onSubmit = (event) => {
+		event.preventDefault();
+
+		const data= {comment}
+		console.log(JSON.stringify(data))
+    
+       fetch(`http://localhost:3001/${postid}/addcomment`, { 
+		   method:'POST',
+		   headers:{'Accept': 'application/json',"Content-Type":"application/json"},
+		   body:JSON.stringify(data),
+		   credentials: 'include'
+		   })   .then(response => response.json())
+		   .then(json => console.log(json))
+		   .catch(error => console.log('Authorization failed : ' + error.message));
+          
+	  }
+
+    console.log(post)
     return(
         <div className="post" >
             <div className="row">
                 <div className="col-lg-8 post">
-                {!space ? "Loading..." :  <div className="post-header"style={{backgroundImage:`url(${space.image})`}}>
-                        <i>{space.name}</i>
-                        <div className="space-desc">
-                            <i>
-                            {space.content}
-                            </i>
-                        </div>
-                    </div>
-}
+            
                     <div className="space-posts">
-                        <a href={`/addpost/${id}`}><button className="btn btn-light rounded-pill">Create Post</button></a>
-                        {!posts?"loading":
-                        posts.map((post)=>{
+                    <form onSubmit={onSubmit}>
+	            <textarea className="fadeIn second" placeholder="Add Question" name="question"  onChange={handleInputChange}/>
+	            <input type="submit" className="fadeIn fourth" value="Add Comment"/>
+	    </form>   
+                        <a href={`/addcomment/${postid}`}><button className="btn btn-light rounded-pill">Add Comments</button></a>
+                        {!post?"loading":
+                        post.comments.map((comment)=>{
                        return( <div className="single-post">
                           
                             <div className="card">
                                 <div className="card-header">
-                                   {post.comments.length} Comments
+                                   Featured
                                 </div>
                                 <div className="card-body">
-                                    <h5 className="card-title" style={{color:"black"}}>{post.creator}</h5>
-                                    <p className="card-text">{post.question}</p>
-                                    <a href={"/"+id+"/"+post._id} className="btn btn-dark">Explore post</a>
+                                    <h5 className="card-title" style={{color:"black"}}>{comment.commentor}</h5>
+                                    <p className="card-text">{comment.content}</p>
+                                 
                                 </div>
                             </div>
 
@@ -99,4 +115,4 @@ const Space =()=>{
     )
 
 }
-export default Space;
+export default Explore;

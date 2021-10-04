@@ -80,8 +80,11 @@ a{
     font-size: 20px;
     margin-left:250px;
 }
-.post-header .btn-light:hover{
-    font-size:20px;
+.btn-light:hover{
+    font-size:15px;
+}
+.btn-light{
+    font-size: 15px;
 }
 .post-header .btn-light a:link{
     color:black;
