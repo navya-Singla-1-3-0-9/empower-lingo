@@ -111,6 +111,7 @@ app.get("/getspace/:id", async (req, res) => {
 });
 app.get("/getpost/:id",async (req,res)=>{
   let post = await Post.findOne({_id:req.params.id});
+  console.log(post)
   res.json({post:post});
   
 })
