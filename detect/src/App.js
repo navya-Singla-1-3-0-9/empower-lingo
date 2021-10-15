@@ -6,6 +6,8 @@ import Alphabet from './components/alphabets';
 import Keys from './pages/keyboard';
 import Translate from './pages/EngToASL';
 import Quiz from './pages/quiz';
+import Login from './pages/login';
+import Register from './pages/register';
 
 
 class App extends Component {
@@ -45,6 +47,15 @@ class App extends Component {
 
 <Route exact path='/quiz'   render={() => (
           <Quiz/>
+          )}
+          exact={true}/>
+
+<Route exact path='/login'   render={() => (
+          <Login/>
+          )}
+          exact={true}/>
+<Route exact path='/register'   render={() => (
+          <Register/>
           )}
           exact={true}/>
 
