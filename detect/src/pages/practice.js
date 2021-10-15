@@ -12,40 +12,46 @@ import * as fp from "fingerpose";
 import Handsigns from './handsigns'
 import {Signimage,Signpass} from './handimage'
 import NavBar from "../components/navbar";
+import '../components/css/practice.css'
 
 function App(props) {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
  
+  const letters= ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
   const {letter}=useParams() 
   
- 
- 
+  const importAll=(r)=> {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+  }
+  
+  const images = importAll(require.context('../components/images/keys', false, /\.(png|jpe?g|svg)$/));
+
+ console.log(images);
  
   return (
     <div className="Appx" style={{backgroundColor:"black"}}>
       <NavBar/>
+      <h1>Practice Letter {letters[letter]}</h1>
       <header className="App-header">
-      <p>{!data ? "Loading..." : data}</p>
+     
       <Cam letter={letter}/>
    
           {letter!=null ? (<img
-            src={Signpass[letter].src}
+          className="prac"
+            src={images[`${letters[letter]}.jpg`].default}
             style={{
               position: "absolute",
               marginLeft: "auto",
               marginRight: "auto",
               width:500,
-              
-            left: 0,
+              backgroundColor:"white",
+              left:50,
               textAlign: "center",
-              height: 480,
-              zIndex:9
+              height: 400,
+              zIndex:9,
+              top:230
+            
             }}
           />):(
             ""

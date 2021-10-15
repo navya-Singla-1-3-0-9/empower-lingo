@@ -172,7 +172,7 @@ const Cam=(props)=>{
             marginLeft: "auto",
             marginRight: "auto",
          
-            right: 0,
+            right: 50,
             textAlign: "center",
             zindex: 9,
             width: 600,
@@ -187,7 +187,7 @@ const Cam=(props)=>{
             marginLeft: "auto",
             marginRight: "auto",
       
-            right: 0,
+            right: 50,
             textAlign: "center",
             zindex: 9,
            
@@ -201,9 +201,9 @@ const Cam=(props)=>{
               position: "absolute",
               marginLeft: "auto",
               marginRight: "auto",
-           
+              top:200,
               bottom: 500,
-              right: 0,
+              right: 50,
               textAlign: "center",
               height: 100,
             }}
