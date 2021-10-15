@@ -5,6 +5,7 @@ import Card from './components/card';
 import Practice from './pages/practice';
 import Alphabet from './components/alphabets';
 
+
 class App extends Component {
   constructor(){
     super();
