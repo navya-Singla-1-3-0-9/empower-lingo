@@ -86,14 +86,14 @@ app.post('/mastered',configuredCors,async (req,res)=>{
 });
 app.get('/results',configuredCors,(req,res)=>{
   // console.log(req.user);
- /* search.json({
+  search.json({
      engine:"google_jobs",
      q: "deaf", 
      location: "Delhi, India"
     }, (result) => {
      // console.log(result.jobs_results);
       res.json({result : result.jobs_results});
-    })*/
+    })
  });
 
 const Volunteer = require('./models/volunteerschema.js');
