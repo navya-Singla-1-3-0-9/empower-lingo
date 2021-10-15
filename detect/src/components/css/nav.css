@@ -71,7 +71,7 @@ body {
 .App .Navbar ul li {
   /* separate the list items more prominently */
   margin: 0 0.75rem;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
 }
 
@@ -99,16 +99,24 @@ body {
 }
 
 /* include the different colors for the different anchor links */
-.App .Navbar ul li:nth-of-type(1) a:before {
+.App .Navbar ul .col-lg-2:nth-of-type(1) a:before {
   background: var(--color-about);
 }
-.App .Navbar ul li:nth-of-type(2) a:before {
+.App .Navbar ul .col-lg-2:nth-of-type(2) a:before {
   background: var(--color-projects);
 }
-.App .Navbar ul li:nth-of-type(3) a:before {
+.App .Navbar ul .col-lg-2:nth-of-type(3) a:before {
   background: var(--color-contacts);
 }
-
+.App .Navbar ul .col-lg-2:nth-of-type(4) a:before {
+  background: yellow;
+}
+.App .Navbar ul .col-lg-2:nth-of-type(5) a:before {
+  background: pink;
+}
+.App .Navbar ul .col-lg-2:nth-of-type(6) a:before {
+  background: purple;
+}
 .App .Navbar ul li a:hover:before {
   /* on hover, change the bottom property to have the faux-border stretch from the top down */
   bottom: -5px;
@@ -151,3 +159,36 @@ ul{
   background-color: transparent;
 }
 
+dd:before {
+  /* include a faux-border with a pseudo element  */
+  content: '';
+  position: absolute;
+  /* by default have the faux-border hidden from view */
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* transition for the hover state */
+  transition: all 0.3s ease-out;
+}
+.dd:hover::before{
+  background: var(--color-about);
+}
+.hide{
+  display:none;
+}
+.show{
+  display: block;
+}
+.dd-menu{
+  margin-left:20px;
+  text-transform: capitalize;
+}
+li{
+  font-size: 20px;
+}
+@media(min-width:975px){
+  .toggler{
+    display: none;
+  }
+}

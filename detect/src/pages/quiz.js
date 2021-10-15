@@ -73,7 +73,7 @@ export default function App() {
 			<h1>Quiz</h1>
 			<div className="col-lg-4">
 			
-				<img src="https://o.remove.bg/downloads/ba9dc701-890b-40b3-afb6-06e4f0dba9ef/istockphoto-1316073865-612x612-removebg-preview.png"/>
+				
 			</div>
 			<div className="col-lg-8">
 			<div className='app1'>

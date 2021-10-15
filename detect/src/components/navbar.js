@@ -1,6 +1,8 @@
 import React,{Component} from "react";
 import './css/nav.css'
 import { Route, Switch, Link, BrowserRouter } from 'react-router-dom';
+import { MdArrowDropDown } from "react-icons/md";
+import { GiHamburgerMenu} from "react-icons/gi";
 import {
   Collapse,
   Navbar,
@@ -26,7 +28,10 @@ class NavBar extends Component {
   constructor(){
     super();
     this.state={
-      isOpen:false
+      isOpen:false,
+      showprac:false,
+      showtran:false,
+      showemp:false,
     }
   }
 // when the component is updated (which also occurs as the new routes are included)
@@ -44,73 +49,79 @@ render() {
  const toggle=()=>{
    this.setState({isOpen:!this.state.isOpen});
  }
+ const toggleprac=()=>{
+  this.setState({showprac:!this.state.showprac});
+}
+const toggletran=()=>{
+  this.setState({showtran:!this.state.showtran});
+}
+
+const toggleemp=()=>{
+  this.setState({showemp:!this.state.showemp});
+}
 return (
 <div className="App">
 
-  <Navbar className="Navbar" expand="md">
-  <NavbarToggler onClick={toggle} />
+  <Navbar className="Navbar" expand="lg">
+  <div className="toggler" onClick={toggle} ><GiHamburgerMenu size={50}/></div>
         <Collapse isOpen={this.state.isOpen} navbar >
     <h2>btf</h2>
     <ul>
       <div className="row">
-      <div className="col-md-3">
+      <div className="col-lg-2">
       <li>
         <Link to="/spaces">Spaces</Link>
       </li>
       </div>
-      <div className="col-md-3">
+      <div className="col-lg-2">
       <li>
         <Link to="/signs">Signs</Link>
       </li>
       </div>
-      <div className="col-md-3">
-      <li><Dropdown>
-        <Dropdown.Toggle 
-        variant="secondary btn-sm" 
-        id="dropdown-basic">
-            TRANSLATE
-        </Dropdown.Toggle>
+      <div className="col-lg-2">
+      <li>
+       <Link to="#" onClick={toggleprac}>Practice<MdArrowDropDown/></Link>
+        <div className={this.state.showprac==false?"hide dd-menu":"show dd-menu"}>
+          <Link to="/practice">Practice</Link>
+          <br/>
+          <Link to="/quiz">Quiz</Link>
+          <br/>
+          <Link to="/talk">Talk with ASL</Link>
+        </div>
+      </li>
+      </div>
+      <div className="col-lg-2">
+      <li>
+       <Link to="#" onClick={toggletran}>Translate<MdArrowDropDown/></Link>
+        <div className={this.state.showtran==false?"hide dd-menu":"show dd-menu"}>
+          <Link to="/translate">English to ASL</Link>
+          <br/>
+          <Link to="/translate1">ASL to English</Link>
+        </div>
+      </li>
+      </div>
 
-        <Dropdown.Menu >
-            <Dropdown.Item href="/translate" >ASL TO ENGLISH</Dropdown.Item>
-            <Dropdown.Item href="/translate1">ENGLISH TO ASL</Dropdown.Item>
-            
-        </Dropdown.Menu>
-        </Dropdown>
-        </li>
-      </div>
-      <div className="col-md-3">
+      <div className="col-lg-2">
       <li>
-        <Link to="/jobs">Jobs</Link>
+       <Link to="#" onClick={toggleemp}>Empower<MdArrowDropDown/></Link>
+        <div className={this.state.showemp==false?"hide dd-menu":"show dd-menu"}>
+          <Link to="/Jobs">Jobs near me</Link>
+          <br/>
+          <Link to="/volunteer">Volunteer</Link>
+          <br/>
+          <Link to="/getvolunteers">Connect with volunteers</Link>
+        </div>
       </li>
       </div>
-      <div className="col-md-3">
-      <li>
-        <Link to="/volunteer">Volunteer</Link>
-      </li>
+      
+      <div className="col-lg-2">
+        <li>
+        <Link to="/profile">My Profile</Link>
+       </li>
       </div>
-      <div className="col-md-3">
-      <li>
-        <Link to="/newspace">News</Link>
-      </li>
-      </div>
-      <div className="col-md-3">
-        <li><Dropdown>
-        <Dropdown.Toggle 
-        variant="secondary btn-sm" 
-        id="dropdown-basic">
-            Practice
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu >
-            <Dropdown.Item href="/practice" >Practice ASL Letters</Dropdown.Item>
-            <Dropdown.Item href="/talk">Talk</Dropdown.Item>
-            <Dropdown.Item href="/quiz">Quiz</Dropdown.Item>
-            <Dropdown.Item href="/signs">Signs</Dropdown.Item>
-        </Dropdown.Menu>
-        </Dropdown>
-        </li>
-</div>
+     
+    
+   
       </div>
     </ul>
     </Collapse>
