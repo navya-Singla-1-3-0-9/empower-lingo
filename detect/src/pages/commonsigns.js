@@ -3,6 +3,7 @@ import '../components/css/signs.css';
 import Particles from "react-tsparticles";
 import { Main } from "tsparticles-engine";
 import { loadBubblesPreset } from "tsparticles-preset-bubbles";
+import Navbar from "../components/navbar";
 class signApp extends React.Component {
     constructor() {
       super();
@@ -226,6 +227,7 @@ class signApp extends React.Component {
 
       return (
         <div className="commonsigns">
+          <Navbar/>
          <Particles options={options} init={this.customInit} />
           <h1>Everyday Signs</h1>
           <div className="all-signs">
