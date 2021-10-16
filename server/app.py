@@ -81,7 +81,7 @@ content=""
 for element in text:
     print(element)
     if element.isalpha():
-        content+=f"<img src='{map.get(element)}' / height=100px / width=100px />"
+        content+=f"<center><img src='{map.get(element)}' / height=100px / width=100px /><center>"
 html_content=f"<html>{content}</html>"
 
 with open('index.html',"w") as html_file:
