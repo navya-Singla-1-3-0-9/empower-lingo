@@ -70,7 +70,7 @@ const url= 'mongodb://localhost:27017/asl'
 const  connect  =  mongoose.connect(url, { useNewUrlParser: true  });
 
 app.post('/login',configuredCors,passport.authenticate('local',{successRedirect:""}),(req,res)=>{
- res.json({success:"user authenticated"})
+ res.json({user:req.user.username});
 });
 
 app.post('/register',configuredCors,async (req,res)=>{
@@ -116,6 +116,15 @@ app.get("/getspaces", async (req, res) => {
   console.log(spaces);
   res.json({ spaces });
 });
+
+app.get("/getuser", (req,res)=>{
+  if(!req.user){
+    res.json({user:"null"});
+  }else{
+    res.json({user:req.user.username});
+  }
+  
+})
 app.post('/addpost/:id',configuredCors,async (req,res)=>{
   let space= await Space.findOneAndUpdate({_id:req.params.id},{$push:{posts:[req.body.question]}});
   let post = new Post({question:req.body.question,creator: req.user.username,linkedspace:space.name});

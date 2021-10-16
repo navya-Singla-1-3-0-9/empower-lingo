@@ -46,7 +46,8 @@ class Login extends React.Component{
 			   .then(json => {
 				this.setState({redirect:true})
 				console.log(json);
-			
+				localStorage.setItem('user', json.user);
+				
 			})
 			   .catch(error => console.log('Authorization failed : ' + error.message));
 			  
