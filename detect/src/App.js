@@ -11,6 +11,7 @@ import Register from './pages/register';
 import Jobs from './pages/jobs';
 import Volunteer from './pages/volunteer';
 import Talk from './pages/talk';
+import Signs from './pages/commonsigns';
 
 
 class App extends Component {
@@ -73,6 +74,11 @@ class App extends Component {
 
 <Route exact path='/talk'   render={() => (
           <Talk/>
+          )}
+          exact={true}/>
+
+<Route exact path='/signs'   render={() => (
+          <Signs/>
           )}
           exact={true}/>
         </Switch>
