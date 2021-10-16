@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
-
+/* define the fonts and colors used in the project */
 :root {
   --font: 'Open Sans', sans-serif;
   --color-bg: #252525;
@@ -20,15 +20,13 @@ body {
   width: 100%;
   font-family: var(--font);
   color: var(--color-txt);
-  background: var(--color-bg);
+ 
 }
 
 
 .App .Navbar {
   /* display the items of the navigation bar in a grid, where the anchor link elements take the space left available by the header  */
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
+ 
 }
 
 .App .Navbar h2 {
@@ -65,8 +63,7 @@ body {
 
 .App .Navbar ul {
   /* display the unordered list in a single row, placing the elements at the end of the grid column */
-  display: flex;
-  justify-content: flex-end;
+ 
   padding: 0.25rem 0.75rem;
   list-style: none;
 }
@@ -126,6 +123,11 @@ body {
   font-size: calc(2rem + 1.5vw);
 }
 
+/*
+for relatively smaller and smaller viewports:
+- start by hiding the pseudo element responsible for the string 
+- continue by removing the header bearing the "logo" as well 
+*/
 
 @media (max-width: 750px) {
   .App .Navbar h2:before {
@@ -135,17 +137,17 @@ body {
 }
 
 @media (max-width: 400px) {
+  /* adjust the visible anchor link elements to show them in a single column, centered in the page */
   .App .Navbar h2 {
     display: none;
   }
-  .App .Navbar ul {
-    grid-column: 1/3;
-    flex-direction: column;
-    align-items: center;
-  }
+  
   .App .Navbar ul li {
     margin: 0.5rem 0;
   }
 }
-
+ul{
+  width:100%;
+  background-color: transparent;
+}
 
