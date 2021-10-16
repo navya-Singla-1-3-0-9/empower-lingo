@@ -22,35 +22,7 @@ function App(props) {
   }, []);
  
   const {letter}=useParams() 
-  const images = { A: Signimage.A, 
-    B: Signimage.B, 
-    C: Signimage.C,
-    D: Signimage.D,
-    E:Signimage.E,
-    F:Signimage.F,
-    G:Signimage.G,
-    H:Signimage.H,
-    I:Signimage.I,
-    J:Signimage.J,
-    K:Signimage.K,
-    L:Signimage.L,
-    M: Signimage.M, 
-    N: Signimage.N,
-    O: Signimage.O,
-    P:Signimage.P,
-    Q:Signimage.Q,
-    R:Signimage.R,
-    S:Signimage.S,
-    T:Signimage.T,
-    U:Signimage.U,
-    V:Signimage.V,
-    W:Signimage.W,
-    X:Signimage.X,
-    Y:Signimage.Y,
-    Z:Signimage.Z,
-  };
- 
- 
+  
  
  
  
