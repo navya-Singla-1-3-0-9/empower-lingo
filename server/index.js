@@ -1,4 +1,5 @@
 const express = require("express");
+const {spawn} = require('child_process');
 const cors = require('cors')
 const corsOptions = {
   origin: 'http://localhost:3000',
@@ -21,6 +22,24 @@ const {PythonShell} =require('python-shell');
 app.options('*', configuredCors)
 
 
+app.get('/', (req, res) => {
+ 
+  var dataToSend;
+  
+  const python = spawn('python', ['app.py']);
+  
+  python.stdout.on('data', function (data) {
+   console.log('Pipe data from python script ...');
+   dataToSend = data.toString();
+  });
+ 
+  python.on('close', (code) => {
+  console.log(`child process close all stdio with code ${code}`);
+
+  res.send(dataToSend)
+  });
+  
+ })
 app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });
   });
@@ -105,11 +124,25 @@ app.post('/addpost/:id',configuredCors,async (req,res)=>{
 app.get("/getspace/:id", async (req, res) => {
   console.log(req.params.id)
  let space= await Space.findOne({_id:req.params.id});
- let posts= await Post.find({linkedspace: space.name})
-
+ let posts= await Post.find({linkedspace: space.name});
  console.log(posts)
   res.json({ space: space, posts: posts});
 });
+
+<<<<<<< HEAD
+ console.log(posts)
+  res.json({ space: space, posts: posts});
+});
+=======
+/*PythonShell.run('app.py',function (err, result){
+  if (err) throw err;
+  // result is an array consisting of messages collected 
+  //during execution of script.
+  console.log('result: ', result.toString());
+  res.send(result.toString())
+ 
+});*/
+>>>>>>> ee1e83aa (python child process)
 app.get("/getpost/:id",async (req,res)=>{
   let post = await Post.findOne({_id:req.params.id});
   console.log(post)
@@ -120,7 +153,8 @@ app.get('/getvols',async (req,res)=>{
   let vols= await Volunteer.find({});
   console.log(vols);
   res.json({volunteers:vols});
-})
+});
+
 app.post('/:postid/addcomment',configuredCors,async (req,res)=>{
   let comment= {commentor: req.user.username, content: req.body.comment}
   await Post.findOneAndUpdate({_id:req.params.postid},{$push:{comments: [comment]}})
