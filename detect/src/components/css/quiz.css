@@ -23,7 +23,7 @@ background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+
     min-height: 100vh;
   }
   
-  .app {
+  .app1 {
   
     margin-top:5%;
     background-color: #252d4a;
@@ -36,7 +36,7 @@ background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+
    
   }
   @media(max-width:700px){
-    .app{
+    .app1{
       width: 80%;
     }
     .col-lg-4 img{
@@ -134,4 +134,7 @@ background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+
   }
   h1{
     color: white;
+  }
+  #main-con{
+    background-color: transparent;
   }

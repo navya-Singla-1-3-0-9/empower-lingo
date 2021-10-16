@@ -68,14 +68,14 @@ export default function App() {
        
         <div className="quiz">
 			
-			<div className="row">
+			<div className="row" id="main-con">
 			<h1>Quiz</h1>
 			<div className="col-lg-4">
 			
 				<img src="https://o.remove.bg/downloads/ba9dc701-890b-40b3-afb6-06e4f0dba9ef/istockphoto-1316073865-612x612-removebg-preview.png"/>
 			</div>
 			<div className="col-lg-8">
-			<div className='app'>
+			<div className='app1'>
 				{showScore ? (
 					<div className='score-section'>
 						You scored {score} out of {questions.length}

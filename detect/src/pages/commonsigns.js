@@ -138,7 +138,7 @@ class signApp extends React.Component {
       const rendersigns = currentsigns.map((sign, index) => {
         return (<div key={index}>
           <h1 style={{color:"black",textAlign:"left"}}>{sign.title}</h1>
-          <img key={index} src={sign.url}/>
+          <img key={index} src={sign.url} className="sign-img"/>
         <p>{sign.instructions}</p>
         <hr/></div>);
       });
