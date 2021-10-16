@@ -78,6 +78,7 @@ app.get('/results',configuredCors,(req,res)=>{
 
 const Volunteer = require('./models/volunteerschema.js');
 const Space = require('./models/spaceschema.js')
+const Post = require('./models/postschema.js')
 app.post('/volunteer',configuredCors,async (req,res)=>{
   console.log(req.body);
   let nv= new Volunteer({full_name: req.body.username,email:req.body.email})
@@ -90,11 +91,16 @@ app.post('/addspace',configuredCors,async (req,res)=>{
 
 })
 app.get("/getspaces", async (req, res) => {
+ //await Space.findOneAndUpdate({name:"I am Capable"},{image:"https://appgrooves.com/cdn/mc/EDUCATION/43_w1200.jpg"})
   let spaces= await Space.find({});
   console.log(spaces);
   res.json({ spaces });
 });
-
+app.post('/addpost/:id',configuredCors,async (req,res)=>{
+  let space= await Space.findOneAndUpdate({_id:req.params.id},{$push:{posts:[req.body.question]}});
+  let post = new Post({question:req.body.question,creator: req.user.username,linkedspace:space.name});
+  await post.save();
+})
 app.get("/getspace/:id", async (req, res) => {
   console.log(req.params.id)
  let space= await Space.findOne({_id:req.params.id});
