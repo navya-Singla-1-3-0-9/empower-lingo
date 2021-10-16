@@ -16,7 +16,6 @@ app.use(bodyParser.json())
 const configuredCors = cors(corsOptions);
 const SerpApi = require('google-search-results-nodejs')
 const search = new SerpApi.GoogleSearch("3d2f0c869c4835a667441651b484e51df952db85c585a102cd1e2e134a1b9ea0")
-const {PythonShell} =require('python-shell');
 
 app.options('*', configuredCors)
 
@@ -125,14 +124,6 @@ app.post('/:postid/addcomment',configuredCors,async (req,res)=>{
   let comment= {commentor: req.user.username, content: req.body.comment}
   await Post.findOneAndUpdate({_id:req.params.postid},{$push:{comments: [comment]}})
 });
-PythonShell.run('app.py',function (err, result){
-  if (err) throw err;
-  // result is an array consisting of messages collected 
-  //during execution of script.
-  console.log('result: ', result.toString());
-  res.send(result.toString())
-});
-
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
