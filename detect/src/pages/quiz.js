@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import '../components/css/quiz.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from '../components/navbar';
 
 export default function App() {
 	const questions = [
@@ -66,8 +67,8 @@ export default function App() {
    console.log(value);
 	return (
        
-        <div className="quiz">
-			
+        <div className="quiz" style={{backgroundColor:"black"}}>
+			<NavBar/>
 			<div className="row" id="main-con">
 			<h1>Quiz</h1>
 			<div className="col-lg-4">

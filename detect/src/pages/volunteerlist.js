@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../components/css/vols.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import doublequote from './style/doublequote.png'
+import NavBar from '../components/navbar';
 
 
 const Volunteers=()=>{
@@ -16,6 +17,7 @@ React.useEffect(() => {
   }, []);
   return(
     <div className="vols">
+          <NavBar/>
          <h1>Our Volunteers</h1>
     <div className="vol-grid">
    

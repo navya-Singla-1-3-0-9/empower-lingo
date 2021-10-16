@@ -1,6 +1,7 @@
 import React from "react";
 import '../components/css/login.css'
 import { Redirect } from 'react-router-dom'
+import NavBar from "../components/navbar";
 
 
 class Login extends React.Component{
@@ -55,6 +56,7 @@ class Login extends React.Component{
 		  }
     return(
       <div className="login">
+		  <NavBar/>
 		  {this.renderRedirect()}
             <div className="container fadeInDown">
 	  <div id="formContent">

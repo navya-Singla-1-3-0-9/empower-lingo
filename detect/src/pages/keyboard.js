@@ -3,6 +3,7 @@ import Card from "../components/card";
 import '../components/css/keyboard.css'
 import Key from "../components/key";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from "../components/navbar";
 class Keys extends React.Component{
     constructor(props){
         super(props);
@@ -22,8 +23,11 @@ class Keys extends React.Component{
     const letters= ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
     let i=0;
     return (
+        <div style={{backgroundColor:"black"}}>
+              <NavBar/>
         <div className="container">
-            <textarea value={this.state.inputVal} style={{color:"black", marginBottom:"10%"}}></textarea>
+          
+            <textarea value={this.state.inputVal} style={{ marginBottom:"10%"}}></textarea>
         <div className="keys">
             {   
                 letters.map((letter,index)=>{
@@ -35,6 +39,7 @@ class Keys extends React.Component{
         <button className= "space btn-block" onClick={this.space}>Space</button>
         </div>
         
+        </div>
         </div>
     );
         }

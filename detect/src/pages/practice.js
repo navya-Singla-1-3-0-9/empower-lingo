@@ -11,6 +11,7 @@ import { drawHand } from "../utilities";
 import * as fp from "fingerpose";
 import Handsigns from './handsigns'
 import {Signimage,Signpass} from './handimage'
+import NavBar from "../components/navbar";
 
 function App(props) {
   const [data, setData] = React.useState(null);
@@ -27,7 +28,8 @@ function App(props) {
  
  
   return (
-    <div className="Appx">
+    <div className="Appx" style={{backgroundColor:"black"}}>
+      <NavBar/>
       <header className="App-header">
       <p>{!data ? "Loading..." : data}</p>
       <Cam letter={letter}/>

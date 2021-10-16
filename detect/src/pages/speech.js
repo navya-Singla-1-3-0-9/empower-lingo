@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "../components/navbar";
 
 const Speech=()=>{
     React.useEffect(() => {
@@ -8,8 +9,8 @@ const Speech=()=>{
              
           });
       }, []);
-      return (<div>
-
+      return (<div style={{backgroundColor:"black"}}>
+          <NavBar/>
       </div>)
 }
 export default Speech;

@@ -1,5 +1,6 @@
 import React from "react";
 import '../components/css/post.css';
+import NavBar from "../components/navbar";
 
 const Spaces=()=>{
     const [spaces, setSpaces] = React.useState([]);
@@ -11,7 +12,11 @@ const Spaces=()=>{
     }, []);
     console.log(spaces);
     return(
+      
+           
         <div style={{backgroundColor:"black"}}>
+              <NavBar/>
+           
            {
                spaces.map(space=>{
                    return(<div key={space._id}>
@@ -29,6 +34,7 @@ const Spaces=()=>{
                })
            } 
         </div>
+
     )
    
 }

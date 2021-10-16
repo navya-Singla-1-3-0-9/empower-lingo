@@ -1,5 +1,6 @@
 import React from "react";
 import '../components/css/login.css'
+import NavBar from "../components/navbar";
 
 
 class Login extends React.Component{
@@ -38,6 +39,7 @@ class Login extends React.Component{
 	render(){
     return(
       <div className="login">
+		  <NavBar/>
             <div className="container fadeInDown">
 	  <div id="formContent">
 	

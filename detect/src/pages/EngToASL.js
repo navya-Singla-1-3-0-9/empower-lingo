@@ -1,6 +1,7 @@
 import React from "react";
 import '../components/css/translated.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from "../components/navbar";
 class Translate extends React.Component{
     constructor(){
         super();
@@ -35,10 +36,11 @@ class Translate extends React.Component{
     render(){
         
         return(
-            <div>
+            <div style={{backgroundColor:"black",minHeight:"100vh"}}>
+                <NavBar/>
             <div className="main text-center">
                 <div className="text-center ">
-                    <textarea onChange={this.addText} placeholder="Enter Text to be translated" style={{color:"black", border:"3px solid gray", height:"300px"}}></textarea>
+                    <textarea onChange={this.addText} placeholder="Enter Text to be translated" ></textarea>
                 </div>
                 <button onClick={this.translate}>Translate</button>
              

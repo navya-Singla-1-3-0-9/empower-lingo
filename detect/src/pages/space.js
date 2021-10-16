@@ -2,6 +2,7 @@ import React from "react";
 import '../components/css/post.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from "react-router-dom";
+import NavBar from "../components/navbar";
 const Space =()=>{
     const {id}=useParams();
     const [space, setSpace] = React.useState(null);
@@ -19,8 +20,10 @@ const Space =()=>{
 
     console.log(posts)
     return(
+        <div>
         <div className="post" >
-            <div className="row">
+            <NavBar/>
+            <div className="row nextrow">
                 <div className="col-lg-8 post">
                 {!space ? "Loading..." :  <div className="post-header"style={{backgroundImage:`url(${space.image})`}}>
                         <i>{space.name}</i>
@@ -95,6 +98,7 @@ const Space =()=>{
                 </div>
 
             </div>
+        </div>
         </div>
     )
 

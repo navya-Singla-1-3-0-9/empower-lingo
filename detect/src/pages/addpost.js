@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import '../components/css/login.css'
 import {useParams} from "react-router-dom";
 import { Redirect } from 'react-router-dom'
+import NavBar from "../components/navbar";
 
 
 const Addpost=()=>{
@@ -38,6 +39,7 @@ const Addpost=()=>{
 
     return(
       <div className="login">
+		  <NavBar/>
 		  {renderRedirect()}
             <div className="container fadeInDown">
 	  <div id="formContent">
