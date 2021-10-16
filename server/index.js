@@ -129,11 +129,9 @@ app.get("/getspace/:id", async (req, res) => {
   res.json({ space: space, posts: posts});
 });
 
-<<<<<<< HEAD
  console.log(posts)
   res.json({ space: space, posts: posts});
 });
-=======
 /*PythonShell.run('app.py',function (err, result){
   if (err) throw err;
   // result is an array consisting of messages collected 
@@ -142,7 +140,6 @@ app.get("/getspace/:id", async (req, res) => {
   res.send(result.toString())
  
 });*/
->>>>>>> ee1e83aa (python child process)
 app.get("/getpost/:id",async (req,res)=>{
   let post = await Post.findOne({_id:req.params.id});
   console.log(post)
