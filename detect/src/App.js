@@ -12,6 +12,8 @@ import Jobs from './pages/jobs';
 import Volunteer from './pages/volunteer';
 import Talk from './pages/talk';
 import Signs from './pages/commonsigns';
+import NewPostForm from './pages/newPost';
+import Space from './pages/space';
 
 
 class App extends Component {
@@ -79,6 +81,16 @@ class App extends Component {
 
 <Route exact path='/signs'   render={() => (
           <Signs/>
+          )}
+          exact={true}/>
+
+<Route exact path='/newspace'   render={() => (
+          <NewPostForm/>
+          )}
+          exact={true}/>
+
+<Route exact path='/space'   render={() => (
+          <Space/>
           )}
           exact={true}/>
         </Switch>
