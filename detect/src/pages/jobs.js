@@ -1,4 +1,5 @@
 import React from "react";
+import '../components/css/jobs.css'
 
 const Jobs =()=>{
     const [data, setData] = React.useState(null);
