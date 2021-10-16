@@ -1,6 +1,6 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,700&display=swap');
-  .quiz {
+  * {
     font-family: "Verdana", cursive, sans-serif;
     color: #ffffff;
   }
@@ -131,4 +131,7 @@ background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+
     height:80%;
     width:80%;
     margin-top:100px;
+  }
+  h1{
+    color: white;
   }
