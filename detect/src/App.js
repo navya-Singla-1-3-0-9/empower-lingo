@@ -8,6 +8,7 @@ import Translate from './pages/EngToASL';
 import Quiz from './pages/quiz';
 import Login from './pages/login';
 import Register from './pages/register';
+import Jobs from './pages/jobs';
 
 
 class App extends Component {
@@ -59,7 +60,10 @@ class App extends Component {
           )}
           exact={true}/>
 
-
+<Route exact path='/jobs'   render={() => (
+          <Jobs/>
+          )}
+          exact={true}/>
 
         </Switch>
       </div>
