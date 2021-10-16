@@ -3,9 +3,7 @@ import swal from "sweetalert";
 import {useParams} from "react-router-dom";
 import * as handpose from "@tensorflow-models/handpose";
 import Webcam from "react-webcam";
-
 import { drawHand } from "../utilities";
-
 import * as fp from "fingerpose";
 import Handsigns from '../pages/handsigns'
 import {Signimage,Signpass} from '../pages/handimage'
@@ -14,7 +12,8 @@ const Cam=(props)=>{
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
   const [emoji, setEmoji] = useState(null);
- 
+  
+  const letters= ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
   
   console.log("props",props.letter)
   const images = { A: Signimage.A, 
@@ -55,7 +54,7 @@ const Cam=(props)=>{
   
     const net = await handpose.load();
     
-    console.log("signs:",Signpass[0]);
+ 
     console.log("Handpose model loaded.");
     //  Loop and detect hands
     setInterval(() => {
@@ -108,13 +107,23 @@ const Cam=(props)=>{
           const maxConfidence = confidence.indexOf(
             Math.max.apply(null, confidence)
           );
-           //console.log(gesture.gestures[maxConfidence].name);
-         
-           
+           //console.log(gesture.gestures[maxConfidence].name);  
            //console.log(Signpass[current].alt && Signpass[current]);
            if(props.letter!=null){
-             console.log(props.letter)
+          
            if (Signpass[props.letter].alt === gesture.gestures[maxConfidence].name) {
+            const data= {mastered:letters[props.letter]}
+            console.log(JSON.stringify(data))
+               fetch('http://localhost:3001/mastered', { 
+               method:'POST',
+               
+               headers:{'Accept': 'application/json',"Content-Type":"application/json"},
+               body:JSON.stringify(data),
+               credentials: 'include'
+               })   .then(response => response.json())
+               .then(json => console.log(json))
+               .catch(error => console.log('Authorization failed : ' + error.message));
+                
             swal(
               <div>
                 <h1>Hello world!</h1>
@@ -122,7 +131,7 @@ const Cam=(props)=>{
                   This is now rendered with JSX!
                 </p>
               </div>
-            )
+            );
               
            }
            

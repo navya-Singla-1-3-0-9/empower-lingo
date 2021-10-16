@@ -4,7 +4,8 @@ const  Schema  =  mongoose.Schema;
 const  userSchema  =  new Schema({
    username: String,
    email:String,
-    progress: String
+progress: String,
+mastered:[String]
 
 });
 
