@@ -40,7 +40,11 @@ class Translate extends React.Component{
                 <NavBar/>
             <div className="main text-center">
                 <div className="text-center ">
+<<<<<<< HEAD
                     <textarea onChange={this.addText} placeholder="Enter Text to be translated" ></textarea>
+=======
+                    <textarea onChange={this.addText} placeholder="Enter Text to be translated" style={{color:"black", border:"3px solid gray", height:"20px"}}></textarea>
+>>>>>>> 73ec6679 (styled asl to eng)
                 </div>
                 <button onClick={this.translate}>Translate</button>
              

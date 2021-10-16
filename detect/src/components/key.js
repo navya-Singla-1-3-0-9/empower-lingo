@@ -1,5 +1,9 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactDOM from 'react-dom';
+
+
+
 const Key=(props)=>{
     function importAll(r) {
         let images = {};
@@ -20,4 +24,5 @@ const Key=(props)=>{
         
     );
 }
+
 export default Key;
