@@ -87,9 +87,21 @@ app.post('/volunteer',configuredCors,async (req,res)=>{
 app.post('/addspace',configuredCors,async (req,res)=>{
   let space = new Space({name:req.body.space, image: req.body.image, content: req.body.content});
   await space.save();
-  
-})
 
+})
+app.get("/getspaces", async (req, res) => {
+  let spaces= await Space.find({});
+  console.log(spaces);
+  res.json({ spaces });
+});
+
+app.get("/getspace/:id", async (req, res) => {
+  console.log(req.params.id)
+ let space= await Space.findOne({_id:req.params.id});
+
+ console.log(space)
+  res.json({ space: space});
+});
   
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
