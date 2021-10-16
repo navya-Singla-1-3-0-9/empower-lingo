@@ -81,7 +81,7 @@ const Space = require('./models/spaceschema.js')
 const Post = require('./models/postschema.js')
 app.post('/volunteer',configuredCors,async (req,res)=>{
   console.log(req.body);
-  let nv= new Volunteer({full_name: req.body.username,email:req.body.email})
+  let nv= new Volunteer({full_name: req.body.full_name,email:req.body.email})
   await nv.save();
   
 });
@@ -114,6 +114,11 @@ app.get("/getpost/:id",async (req,res)=>{
   console.log(post)
   res.json({post:post});
   
+})
+app.get('/getvols',async (req,res)=>{
+  let vols= await Volunteer.find({});
+  console.log(vols);
+  res.json({volunteers:vols});
 })
 app.post('/:postid/addcomment',configuredCors,async (req,res)=>{
   let comment= {commentor: req.user.username, content: req.body.comment}

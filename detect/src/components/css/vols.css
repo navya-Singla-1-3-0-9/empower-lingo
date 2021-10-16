@@ -1,0 +1,22 @@
+.btn-primary{
+    color:white;
+    font-size:20px;
+    padding:0;
+    width:250px;
+}
+.btn-primary:hover{
+    font-size:20px;
+}
+.btn-primary a:link{
+    margin-top: 0;
+    
+    color: white;
+}
+.vol-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 100px 100px;
+}
+.single-vol h1{
+    font-size:30px;
+}
