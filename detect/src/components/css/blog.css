@@ -1,0 +1,33 @@
+.note {
+    position: relative;
+    height: 100%;
+    padding: 1em 1.5em;
+    margin: 2em auto;
+    color: #fff;
+    background: #ccddff;
+  }
+  .note h1{
+      font-size: 30px;
+  }
+  .all-blogs{
+      padding:2% 10%;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 30px;
+      margin-bottom: 3%;
+  }
+  .note:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 80px 80px 0;
+    border-style: solid;
+    border-color: #80aaff #000f;
+    display: block;
+    width: 0;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+  
+  }
