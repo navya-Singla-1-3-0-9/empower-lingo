@@ -97,6 +97,7 @@ return (
           <Link to="/translate">English to ASL</Link>
           <br/>
           <Link to="/translate1">ASL to English</Link>
+          <Link to="/transcribe">Trancribe an Audio</Link>
         </div>
       </li>
       </div>

@@ -24,7 +24,7 @@ import Audio_link from './pages/transcribe';
 import Transcript from './pages/transcript';
 import Blogs from './pages/blog';
 import ProgressProvider from './components/progressBar';
-import CircularProgressbar from './components/circularProgress.js';
+import Profile from './pages/profile';
 
 
 
@@ -82,7 +82,7 @@ class App extends Component {
 <Route exact path='/:spaceid/:postid' component={Explore}/>
 <Route exact path='/transcribe' component={Audio_link}/>
 <Route exact path='/blogs' component={Blogs}/>
-<Route exact path='/profile' component={CircularProgressbar}/>
+<Route exact path='/profile' component={Profile}/>
 
 
 

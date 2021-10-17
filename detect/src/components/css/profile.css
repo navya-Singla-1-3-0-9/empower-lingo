@@ -1,0 +1,21 @@
+.profile-pg{
+    background-color: white;
+    width:35%;
+    margin: 10% 30%;
+    text-align: center;
+    border-radius: 25px;
+    color:black;
+}
+.main-info h1{
+    color: black;
+    font-size: 40px;
+}
+.main-info p{
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 0;
+}
+.mastered{
+    height: 200px;
+    overflow: scroll;
+}
