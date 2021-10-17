@@ -123,7 +123,7 @@ app.get('/results',configuredCors,(req,res)=>{
       res.json({result : result.jobs_results});
     })
  });
-app.get('/blogresult',configuredCors,(req,res)=>{
+app.get('/blogresult',(req,res)=>{
   // console.log(req.user);
   search.json({
      q: "Sign Language Blogs", 
