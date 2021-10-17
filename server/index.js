@@ -23,6 +23,8 @@ app.options('*', configuredCors);
 
 const axios = require("axios");
   
+
+
 const assembly = axios.create({
   baseURL: "https://api.assemblyai.com/v2",
   headers: {
@@ -117,8 +119,18 @@ app.get('/results',configuredCors,(req,res)=>{
      q: "deaf", 
      location: "Delhi, India"
     }, (result) => {
-     // console.log(result.jobs_results);
+     console.log(result.jobs_results);
       res.json({result : result.jobs_results});
+    })
+ });
+app.get('/blogresult',configuredCors,(req,res)=>{
+  // console.log(req.user);
+  search.json({
+     q: "Sign Language Blogs", 
+    }, (result) => {
+     // console.log(result.jobs_results);
+     console.log(result);
+     res.json({result : result.organic_results});
     })
  });
 
