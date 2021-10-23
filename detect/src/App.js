@@ -5,6 +5,7 @@ import Practice from './pages/practice';
 import Alphabet from './components/alphabets';
 import Keys from './pages/keyboard';
 import Translate from './pages/EngToASL';
+import Quiz from './pages/quiz';
 
 
 class App extends Component {
@@ -39,6 +40,11 @@ class App extends Component {
           exact={true}/>
 <Route exact path='/translate1'   render={() => (
            <Translate/>
+          )}
+          exact={true}/>
+
+<Route exact path='/quiz'   render={() => (
+          <Quiz/>
           )}
           exact={true}/>
 
