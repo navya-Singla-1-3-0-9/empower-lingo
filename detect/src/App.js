@@ -1,7 +1,9 @@
 import { CallbackConstructorRegistry } from '@tensorflow/tfjs-layers/dist/base_callbacks';
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Card from './components/card';
 import Practice from './pages/practice';
+import Alphabet from './components/alphabets';
 
 class App extends Component {
   constructor(){
@@ -10,16 +12,11 @@ class App extends Component {
       letter:0,
     }
   }
+  
+
   render() {
    
-    const change=()=>{
-   
-      this.setState({letter:3},function(){
-      //  console.log(this.state.letter);
-      });
-      
-     
-    }
+ 
     const App = () => (
      
       <div>
@@ -30,13 +27,13 @@ class App extends Component {
           )}
           exact={true}/>
 
-<Route exact path='/'   render={() => (
-    <div>
-           <button onClick={change}>Change Letter</button>
-           {console.log(this.state.letter)}
-           </div>
+  <Route exact path='/practice'   render={() => (
+           <Alphabet/>
           )}
           exact={true}/>
+
+
+
         </Switch>
       </div>
     )

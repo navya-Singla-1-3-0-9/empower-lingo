@@ -13,7 +13,13 @@ import Handsigns from './handsigns'
 import {Signimage,Signpass} from './handimage'
 
 function App(props) {
-  
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
  
   const {letter}=useParams() 
   const images = { A: Signimage.A, 
@@ -51,6 +57,7 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
+      <p>{!data ? "Loading..." : data}</p>
       <Cam letter={letter}/>
    
           {letter!=null ? (<img
