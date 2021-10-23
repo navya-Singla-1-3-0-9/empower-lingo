@@ -1,6 +1,5 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import A from './images/alphbets/A.jpg'
 import './css/card.css'
 
 const Card=(props)=>{
