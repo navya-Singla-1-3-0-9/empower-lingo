@@ -1,6 +1,7 @@
 import React from "react";
 import '../components/css/blog.css'
 import NavBar from "../components/navbar";
+import { MDBCard, MDBCardHeader, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from 'mdb-react-ui-kit';
 
 
 const Blogs =()=>{
@@ -26,13 +27,14 @@ const Blogs =()=>{
             {arr.length==0 ? <p>"Loading..."</p> : 
               
             arr.map(blog => {
-                 return(<div style={{color:"black"}} key={blog.title} className="note">
-                     
-                     <h1 style={{color:"black"}}>{blog.title}</h1>
-                     <h4 style={{color:"black"}}>{blog.link}</h4>
-                     <p style={{color:"black"}}>{blog.snippet}</p>
-                    
-                     </div>)
+                 return(<MDBCard style={{backgroundColor:"#e9ffdb"}}>
+                    {/* <MDBCardHeader>Featured</MDBCardHeader> */}
+                    <MDBCardBody>
+                      <MDBCardTitle style={{color:"black"}}>{blog.title}</MDBCardTitle>
+                      <MDBCardText>{blog.snippet}</MDBCardText>
+                      <MDBBtn href={blog.link}>Read More..</MDBBtn>
+                    </MDBCardBody>
+                  </MDBCard>)
                 })
              }
              </div>
