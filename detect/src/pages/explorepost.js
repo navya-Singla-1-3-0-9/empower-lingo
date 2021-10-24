@@ -3,9 +3,11 @@ import '../components/css/post.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from "react-router-dom";
 import { Exp } from "@tensorflow/tfjs-core";
+import { Redirect } from 'react-router-dom'
 const Explore =()=>{
     const {spaceid, postid}=useParams();
     const [post,setPost]= useState(null);
+    const [reload, setReload]= useState(false);
   //  console.log(id);
     React.useEffect(() => {
       fetch("/getpost/"+postid)
@@ -32,19 +34,31 @@ const Explore =()=>{
 		   body:JSON.stringify(data),
 		   credentials: 'include'
 		   })   .then(response => response.json())
-		   .then(json => console.log(json))
+		   .then(json =>{
+          
+             console.log(json)
+           }
+           )
 		   .catch(error => console.log('Authorization failed : ' + error.message));
+
+           fetch("/getpost/"+postid)
+           .then((res) => res.json())
+           .then((data) => {
+               setPost(data.post)
+           });
           
 	  }
-
+    
     console.log(post)
     return(
         <div className="post" >
+          
             <div className="row">
                 <div className="col-lg-8 post">
             
                     <div className="space-posts">
                     <form onSubmit={onSubmit}>
+                 
 	            <textarea className="fadeIn second" placeholder="Add Question" name="question"  onChange={handleInputChange}/>
 	            <input type="submit" className="fadeIn fourth" value="Add Comment"/>
 	    </form>   
