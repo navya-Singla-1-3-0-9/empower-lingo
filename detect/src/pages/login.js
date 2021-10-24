@@ -25,7 +25,8 @@ class Login extends React.Component{
 		   method:'POST',
 		   
 		   headers:{'Accept': 'application/json',"Content-Type":"application/json"},
-		   body:JSON.stringify(data)
+		   body:JSON.stringify(data),
+		   credentials: 'include'
 		   })   .then(response => response.json())
 		   .then(json => console.log(json))
 		   .catch(error => console.log('Authorization failed : ' + error.message));

@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require('cors')
 const corsOptions = {
   origin: 'http://localhost:3000',
+  credentials: true, 
 }
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -45,7 +46,7 @@ const url= 'mongodb://localhost:27017/asl'
 const  connect  =  mongoose.connect(url, { useNewUrlParser: true  });
 
 app.post('/login',configuredCors,passport.authenticate('local',{successRedirect:""}),(req,res)=>{
- console.log(req.user);
+ //console.log(req.user);
  res.json({success:"user authenticated"})
 });
 
@@ -53,6 +54,14 @@ app.post('/register',configuredCors,async (req,res)=>{
   const {email, username, password}= req.body;
 	const nu = new User({email, username, role:"patient"});
 	const regdUser= await User.register(nu, password);
+});
+app.post('/mastered',configuredCors,async (req,res)=>{
+ 
+   
+   await User.findOneAndUpdate({username: req.user.username},{$addToSet:{mastered:[req.body.mastered]}});
+   let user = await User.find({username:req.user.username});
+   console.log(user);
+ 
 });
 
   
