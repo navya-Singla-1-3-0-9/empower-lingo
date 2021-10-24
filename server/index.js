@@ -14,9 +14,21 @@ const localStrategy= require('passport-local');
 app.use(bodyParser.urlencoded({ extended: false }));           
 app.use(bodyParser.json())
 const configuredCors = cors(corsOptions);
+const SerpApi = require('google-search-results-nodejs')
+const search = new SerpApi.GoogleSearch("3d2f0c869c4835a667441651b484e51df952db85c585a102cd1e2e134a1b9ea0")
 
 app.options('*', configuredCors)
+app.get('/results',configuredCors,(req,res)=>{
+  search.json({
+    engine:"google_jobs",
+    q: "deaf", 
+    location: "Delhi, India"
+   }, (result) => {
+    // console.log(result.jobs_results);
+     res.json({result : result.jobs_results});
+   })
 
+})
 app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });
   });
