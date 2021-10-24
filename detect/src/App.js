@@ -18,6 +18,7 @@ import Spaces from './pages/allspaces';
 import Addpost from './pages/addpost';
 import Explore from './pages/explorepost';
 import Volunteers from './pages/volunteerlist';
+import Speech from './pages/speech';
 
 
 class App extends Component {
@@ -57,6 +58,10 @@ class App extends Component {
 
 <Route exact path='/quiz'   render={() => (
           <Quiz/>
+          )}
+          exact={true}/>
+          <Route exact path='/speech'   render={() => (
+          <Speech/>
           )}
           exact={true}/>
 

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import swal from "sweetalert";
+import Swal from 'sweetalert2'
 import {useParams} from "react-router-dom";
 import * as handpose from "@tensorflow-models/handpose";
 import Webcam from "react-webcam";
@@ -124,14 +124,24 @@ const Cam=(props)=>{
                .then(json => console.log(json))
                .catch(error => console.log('Authorization failed : ' + error.message));
                 
-            swal(
+              /*swal(
               <div>
                 <h1>Hello world!</h1>
                 <p>
                   This is now rendered with JSX!
                 </p>
               </div>
-            );
+            );*/
+            Swal.fire({
+              title: 'Success!',
+              text: 'You got this one Correct!',
+              icon: 'success',
+              confirmButtonText: 'Cool'
+            }).then((result)=>{
+              if(result.value){
+                console.log(result.value);
+              }
+            })
               
            }
            

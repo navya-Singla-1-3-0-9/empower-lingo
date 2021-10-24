@@ -23,7 +23,7 @@ app.options('*', configuredCors)
 
 
 app.get('/', (req, res) => {
- 
+ console.log("here");
   var dataToSend;
   
   const python = spawn('python', ['app.py']);
