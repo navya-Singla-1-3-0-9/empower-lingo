@@ -1,6 +1,6 @@
 import { CallbackConstructorRegistry } from '@tensorflow/tfjs-layers/dist/base_callbacks';
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { Component, useState } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Practice from './pages/practice';
 import Alphabet from './components/alphabets';
 import Keys from './pages/keyboard';
@@ -19,6 +19,7 @@ import Addpost from './pages/addpost';
 import Explore from './pages/explorepost';
 import Volunteers from './pages/volunteerlist';
 import Speech from './pages/speech';
+import PrivateRoute from './components/privateroute';
 
 
 class App extends Component {
@@ -32,96 +33,50 @@ class App extends Component {
 
   render() {
    
- 
+    
     const App = () => (
      
       <div>
         <Switch>
-          <Route exact path='/practice/:letter'   render={() => (
-            <Practice
-            />
-          )}
-          exact={true}/>
+      
+          <Route exact path='/practice/:letter' component={Practice}/>
+          <PrivateRoute exact path='/practice' component={Alphabet}/>
 
-  <Route exact path='/practice'   render={() => (
-           <Alphabet/>
+{/*<Route exact path='/practice'   render={() => (
+            <Alphabet/>
           )}
-          exact={true}/>
-  <Route exact path='/translate'   render={() => (
-           <Keys/>
-          )}
-          exact={true}/>
-<Route exact path='/translate1'   render={() => (
-           <Translate/>
-          )}
-          exact={true}/>
+          exact={true}
+/>*/}
 
-<Route exact path='/quiz'   render={() => (
-          <Quiz/>
-          )}
-          exact={true}/>
-          <Route exact path='/speech'   render={() => (
-          <Speech/>
-          )}
-          exact={true}/>
+  
+  <Route exact path='/translate'  component={Keys}/>
+<Route exact path='/translate1'  component={Translate}/>
 
-<Route exact path='/login'   render={() => (
-          <Login/>
-          )}
-          exact={true}/>
-<Route exact path='/register'   render={() => (
-          <Register/>
-          )}
-          exact={true}/>
+<Route exact path='/quiz' component={Quiz}/>
+          <Route exact path='/speech'  component={Speech}/>
 
-<Route exact path='/jobs'   render={() => (
-          <Jobs/>
-          )}
-          exact={true}/>
-<Route exact path='/volunteer'   render={() => (
-          <Volunteer/>
-          )}
-          exact={true}/>
+<Route exact path='/login'  component={Login}/>
+<Route exact path='/register' component={Register}/>
 
-<Route exact path='/talk'   render={() => (
-          <Talk/>
-          )}
-          exact={true}/>
+<Route exact path='/jobs' component={Jobs}/>
+<Route exact path='/volunteer'  component={Volunteer}/>
 
-<Route exact path='/signs'   render={() => (
-          <Signs/>
-          )}
-          exact={true}/>
+<Route exact path='/talk'  component={Talk}/>
 
-<Route exact path='/newspace'   render={() => (
-          <NewPostForm/>
-          )}
-          exact={true}/>
+<Route exact path='/signs' component={Signs}/>
 
-<Route exact path='/space/:id'   render={() => (
-          <Space/>
-          )}
-          exact={true}/>
+<Route exact path='/newspace'  component={NewPostForm}/>
 
-<Route exact path='/spaces'   render={() => (
-          <Spaces/>
-          )}
-          exact={true}/>
-          <Route exact path='/getvolunteers'   render={() => (
-          <Volunteers/>
-          )}
-          exact={true}/>
-          <Route exact path='/addpost/:id'   render={() => (
-          <Addpost/>
-          )}
-          exact={true}/>
-              <Route exact path='/:spaceid/:postid'   render={() => (
-          <Explore/>
-          )}
-          exact={true}/>
+<Route exact path='/space/:id'  component={Space}/>
+
+<Route exact path='/spaces' component={Spaces}/>
+          <Route exact path='/getvolunteers'  component={Volunteers}/>
+          <Route exact path='/addpost/:id' component={Addpost}/>
+              <Route exact path='/:spaceid/:postid' component={Explore}/>
         </Switch>
       </div>
     )
+    
     return (
       <Switch>
         <App/>
