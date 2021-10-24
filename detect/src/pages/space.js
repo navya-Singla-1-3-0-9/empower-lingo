@@ -1,20 +1,30 @@
 import React from "react";
 import '../components/css/post.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import {useParams} from "react-router-dom";
 const Space =()=>{
+    const {id}=useParams();
+    const [space, setSpace] = React.useState(null);
+    console.log(id);
+    React.useEffect(() => {
+      fetch("/getspace/"+id)
+        .then((res) => res.json())
+        .then((data) => setSpace(data.space));
+    }, []);
+    console.log(space)
     return(
         <div className="post" >
             <div className="row">
                 <div className="col-lg-8 post">
-                    <div className="post-header">
-                        <i>I am Capable</i>
+                {!space ? "Loading..." :  <div className="post-header"style={{backgroundImage:`url(${space.image})`}}>
+                        <i>{space.name}</i>
                         <div className="space-desc">
                             <i>
-                            I think that by just believing in yourself, you can achieve evey feat that you put your mind to! This space will allow all my like-minded peers to eliminate self-doubts!
+                            {space.content}
                             </i>
                         </div>
                     </div>
+}
                     <div className="space-posts">
                         <div className="single-post">
                           
@@ -48,9 +58,9 @@ const Space =()=>{
                     <div className="share">
                         SHARE 
                         <span className="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-secondary">Left</button>
-                        <button type="button" class="btn btn-secondary">Middle</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
+                        <button type="button" className="btn btn-secondary">Left</button>
+                        <button type="button" className="btn btn-secondary">Middle</button>
+                        <button type="button" className="btn btn-secondary">Right</button>
 
                         </span>
                        

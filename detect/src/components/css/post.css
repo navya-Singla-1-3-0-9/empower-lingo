@@ -74,3 +74,21 @@ a{
 .space-posts .card{
     margin-bottom: 30px;
 }
+.post-header .btn-light{
+    color:black;
+    margin-top:20%;
+    font-size: 20px;
+    margin-left:250px;
+}
+.post-header .btn-light:hover{
+    font-size:20px;
+}
+.post-header .btn-light a:link{
+    color:black;
+}
+@media(max-width:600px){
+    .post-header .btn-light{
+        margin-top:10%;
+        margin-left:20px;
+    }
+}
