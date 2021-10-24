@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import '../components/css/signs.css'
+import '../components/css/signs.css';
+import Particles from "react-tsparticles";
+import { Main } from "tsparticles-engine";
+import { loadBubblesPreset } from "tsparticles-preset-bubbles";
 class signApp extends React.Component {
     constructor() {
       super();
@@ -126,9 +129,53 @@ class signApp extends React.Component {
         currentPage: Number(event.target.id)
       });
     }
+    customInit(main: Main) {
+      // this adds the preset to tsParticles, you can safely use the
+      loadBubblesPreset(main);
+    }
 
     render() {
       const { signs, currentPage, signsPerPage } = this.state;
+      const options = {
+        particles: {
+          move: {
+            speed: 10,
+            outModes: {
+              default: "destroy",
+              bottom: "none"
+            }
+          },
+          size: {
+            value: 30
+          }
+        },
+        emitters: {
+          direction: "top",
+          size: {
+            width: 200,
+            height: 0
+          },
+          color: {
+            value: "#ffffff"
+          },
+          position: {
+            x: 50,
+            y: 101
+          },
+          rate: {
+            quantity: 5,
+            delay: 0.3
+          }
+        },
+        background: {
+          image:
+            "url('https://hdwallsource.com/img/2014/4/digital-wallpapers-24971-25651-hd-wallpapers.jpg')",
+          size: "100% 100%",
+          repeat: "no-repeat"
+        },
+        
+        preset: "bubbles",
+      };
 
       // Logic for displaying current signs
       const indexOfLastsign = currentPage * signsPerPage;
@@ -136,11 +183,27 @@ class signApp extends React.Component {
       const currentsigns = signs.slice(indexOfFirstsign, indexOfLastsign);
 
       const rendersigns = currentsigns.map((sign, index) => {
-        return (<div key={index}>
-          <h1 style={{color:"black",textAlign:"left"}}>{sign.title}</h1>
+        return (<div key={index} className="cards">
+         {/* <h1 style={{color:"black",textAlign:"left"}}>{sign.title}</h1>
           <img key={index} src={sign.url} className="sign-img"/>
         <p>{sign.instructions}</p>
-        <hr/></div>);
+        <hr/>*/}
+          <a href="" className="card">
+      <img src={sign.url} className="card__image" alt="" />
+      <div className="card__overlay">
+        <div className="card__header">
+          <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <img className="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+          <div className="card__header-text">
+            <h3 className="card__title">{sign.title}</h3>
+            <span className="card__status">Hover Here for text instructions</span>
+          </div>          
+        </div>
+        <p className="card__description">{sign.instructions}</p>
+      </div>
+    </a>
+  
+        </div>);
       });
 
       // Logic for displaying page numbers
@@ -162,13 +225,17 @@ class signApp extends React.Component {
       });
 
       return (
-        <div>
+        <div className="commonsigns">
+         <Particles options={options} init={this.customInit} />
+          <h1>Everyday Signs</h1>
+          <div className="all-signs">
           <ul style={{color:"black"}}>
             {rendersigns}
           </ul>
           <ul id="page-numbers">
             {renderPageNumbers}
           </ul>
+          </div>
         </div>
       );
     }
