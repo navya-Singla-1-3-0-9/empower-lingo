@@ -1,5 +1,5 @@
 import React from "react";
-import '../components/css/blogs.css'
+import '../components/css/blog.css'
 import NavBar from "../components/navbar";
 
 

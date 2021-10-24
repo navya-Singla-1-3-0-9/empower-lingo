@@ -22,6 +22,7 @@ import Speech from './pages/speech';
 import PrivateRoute from './components/privateroute';
 import Audio_link from './pages/transcribe';
 import Transcript from './pages/transcript';
+import Blogs from './pages/blog';
 
 
 class App extends Component {
@@ -77,6 +78,7 @@ class App extends Component {
 <Route exact path='/addpost/:id' component={Addpost}/>
 <Route exact path='/:spaceid/:postid' component={Explore}/>
 <Route exact path='/transcribe' component={Audio_link}/>
+<Route exact path='/blogs' component={Blogs}/>
 
 
         </Switch>
