@@ -107,6 +107,8 @@ return (
         <div className={this.state.showemp==false?"hide dd-menu":"show dd-menu"}>
           <Link to="/Jobs">Jobs near me</Link>
           <br/>
+          <Link to="/Blogs">BLOG</Link>
+          <br/>
           <Link to="/volunteer">Volunteer</Link>
           <br/>
           <Link to="/getvolunteers">Connect with volunteers</Link>
