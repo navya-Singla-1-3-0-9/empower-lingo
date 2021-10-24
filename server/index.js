@@ -22,7 +22,7 @@ app.get('/results',configuredCors,(req,res)=>{
   search.json({
     engine:"google_jobs",
     q: "deaf", 
-    location: "Delhi, India"
+    location: "Austin, TX"
    }, (result) => {
     // console.log(result.jobs_results);
      res.json({result : result.jobs_results});
