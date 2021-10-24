@@ -6,6 +6,7 @@ import { drawHand } from "../utilities";
 import * as fp from "fingerpose";
 import Handsigns from '../pages/handsigns'
 import {Signimage,Signpass} from '../pages/handimage'
+import NavBar from "../components/navbar";
 
 const Talk=()=>{
   const webcamRef = useRef(null);
@@ -126,7 +127,8 @@ const Talk=()=>{
   useEffect(()=>{runHandpose()},[]);
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor:"black"}}>
+      <NavBar/>
       <header className="App-header">
      
         <Webcam
@@ -177,7 +179,7 @@ const Talk=()=>{
         )}
     
 
-      <textarea style={{zIndex:"9",marginTop:"600px", color:"black"}} value={inputval.join("")}></textarea>
+      <textarea style={{zIndex:"9",marginTop:"600px"}} value={inputval.join("")}></textarea>
        
       </header>
     </div>

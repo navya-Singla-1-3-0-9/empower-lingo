@@ -1,5 +1,6 @@
 import React from "react";
 import '../components/css/login.css'
+import NavBar from "../components/navbar";
 
 
 class Volunteer extends React.Component{
@@ -37,7 +38,8 @@ class Volunteer extends React.Component{
 	render(){
     return(
       <div className="login" style={{backgroundImage:"url('https://i.pinimg.com/736x/e1/0b/57/e10b57588da98b075f3280d8ec38dd7c--helping-hands-beautiful-hands.jpg')"}}>
-            <div className="container fadeInDown">
+            <NavBar/>
+			<div className="container fadeInDown">
                 <h1>Volunteer!</h1>
 	  <div id="formContent">
 	

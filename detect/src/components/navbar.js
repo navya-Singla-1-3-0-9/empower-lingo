@@ -22,28 +22,7 @@ class NavBar extends Component {
   }
 // when the component is updated (which also occurs as the new routes are included)
 // consider the text of the main header and alter the CSS custom property to style the background of the header in the navigation bar and the color of the header according to which route is included
-componentDidUpdate() {
-let header = document.querySelector("h1");
-let text = header.textContent.toLowerCase();
-let color;
-switch(text) {
-case 'about':
-  color = "#16A085";
-  break;
-case 'projects':
-  color = "#E74C3C";
-  break;
-case 'contacts':
-  color = "#2980B9";
-  break;
-default:
-  color = "#F1C40F";
-  break;
-}
-// update the custom property for the root element and have it cascade on the header as well
-let root = document.querySelector(":root");
-root.style.setProperty("--color-home", color);
-}
+
 
 /* render 
 - a nav with a header and three anchor links elements

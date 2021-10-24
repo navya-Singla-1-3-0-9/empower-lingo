@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from "react-router-dom";
 import { Exp } from "@tensorflow/tfjs-core";
 import { Redirect } from 'react-router-dom'
+import NavBar from "../components/navbar";
 const Explore =()=>{
     const {spaceid, postid}=useParams();
     const [post,setPost]= useState(null);
@@ -52,8 +53,8 @@ const Explore =()=>{
     console.log(post)
     return(
         <div className="post" >
-          
-            <div className="row">
+          <NavBar/>
+            <div className="row nextRow">
                 <div className="col-lg-8 post">
             
                     <div className="space-posts">
