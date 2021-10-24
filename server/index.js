@@ -124,9 +124,13 @@ app.post('/addpost/:id',configuredCors,async (req,res)=>{
 app.get("/getspace/:id", async (req, res) => {
   console.log(req.params.id)
  let space= await Space.findOne({_id:req.params.id});
+<<<<<<< HEAD
  let posts= await Post.find({linkedspace: space.name});
  console.log(posts)
   res.json({ space: space, posts: posts});
+=======
+ let posts= await Post.find({linkedspace: space.name})
+>>>>>>> 2d261821 (removed error)
 });
 
  console.log(posts)
