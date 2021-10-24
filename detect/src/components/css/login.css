@@ -10,9 +10,15 @@
   box-sizing: border-box;
 }
 
-body {
+.login {
   font-family: 'Kalam';
   height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1524964056700-f5738231ad5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
 }
 
 a {
@@ -49,10 +55,10 @@ h2 {
 #formContent {
   border-radius: 3px;
   border: 3px solid skyblu;
-  background: #252d4a;
+  background: black;
   padding: 0;
   width: 90%;
-  max-width: 350px;
+  max-width: 500px;
   position: relative;
   box-shadow: 0 0 10px #464647;
   text-align: center;
@@ -175,11 +181,6 @@ input[type=text]:focus, input[type="password"]:focus {
   animation-fill-mode: forwards;
   animation-duration: 1s;
 }
-@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
-
 
 .fadeIn.first {
   animation-delay: 0.4s;

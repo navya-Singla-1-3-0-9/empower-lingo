@@ -2,7 +2,7 @@
   "name": "detect",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+ 
   "dependencies": {
     "@tensorflow-models/handpose": "0.0.7",
     "@tensorflow/tfjs": "^3.9.0",
@@ -44,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.1"
+  },
+  "proxy": "http://localhost:3001"
 }
