@@ -101,7 +101,7 @@ const Space = require('./models/spaceschema.js')
 const Post = require('./models/postschema.js')
 app.post('/volunteer',configuredCors,async (req,res)=>{
   console.log(req.body);
-  let nv= new Volunteer({full_name: req.body.full_name,email:req.body.email})
+  let nv= new Volunteer({username:req.user.username,full_name: req.body.full_name,email:req.body.email, reason: req.body.reason,image:req.body.image});
   await nv.save();
   
 });

@@ -1,8 +1,11 @@
 const  mongoose  = require("mongoose");
 const  Schema  =  mongoose.Schema;
 const  volunteerSchema  =  new Schema({
+    username:String,
    full_name: String,
     email:String,
+    reason: String,
+    image: String
 
 });
 
