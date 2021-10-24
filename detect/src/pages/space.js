@@ -26,6 +26,7 @@ const Space =()=>{
                     </div>
 }
                     <div className="space-posts">
+                        <a href={`/addpost/${id}`}><button className="btn btn-light rounded-pill">Create Post</button></a>
                         <div className="single-post">
                           
                             <div className="card">

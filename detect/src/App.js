@@ -15,6 +15,7 @@ import Signs from './pages/commonsigns';
 import NewPostForm from './pages/newPost';
 import Space from './pages/space';
 import Spaces from './pages/allspaces';
+import Addpost from './pages/addpost';
 
 
 class App extends Component {
@@ -97,6 +98,10 @@ class App extends Component {
 
 <Route exact path='/spaces'   render={() => (
           <Spaces/>
+          )}
+          exact={true}/>
+          <Route exact path='/addpost/:id'   render={() => (
+          <Addpost/>
           )}
           exact={true}/>
         </Switch>
