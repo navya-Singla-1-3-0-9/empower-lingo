@@ -41,12 +41,16 @@ class Translate extends React.Component{
             <div className="main text-center">
                 <div className="text-center ">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <textarea onChange={this.addText} placeholder="Enter Text to be translated" ></textarea>
 =======
                     <textarea onChange={this.addText} placeholder="Enter Text to be translated" style={{color:"black", border:"3px solid gray", height:"20px"}}></textarea>
 >>>>>>> 73ec6679 (styled asl to eng)
+=======
+                    <textarea onChange={this.addText} placeholder="Enter Text to be translated" style={{color:"white", border:"3px solid gray", height:"150px", width:"100%"}}></textarea>
+>>>>>>> 53703f55 (fixed translate button)
                 </div>
-                <button onClick={this.translate}>Translate</button>
+                <button className= "btn btn-warning" onClick={this.translate}>Translate</button>
              
             </div>
             <div className="translated">
