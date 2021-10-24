@@ -20,6 +20,8 @@ import Explore from './pages/explorepost';
 import Volunteers from './pages/volunteerlist';
 import Speech from './pages/speech';
 import PrivateRoute from './components/privateroute';
+import Audio_link from './pages/transcribe';
+import Transcript from './pages/transcript';
 
 
 class App extends Component {
@@ -70,9 +72,13 @@ class App extends Component {
 <Route exact path='/space/:id'  component={Space}/>
 
 <Route exact path='/spaces' component={Spaces}/>
-          <Route exact path='/getvolunteers'  component={Volunteers}/>
-          <Route exact path='/addpost/:id' component={Addpost}/>
-              <Route exact path='/:spaceid/:postid' component={Explore}/>
+<Route exact path='/getvolunteers'  component={Volunteers}/>
+<Route exact path='/transcript/:trans_id' component={Transcript}/>
+<Route exact path='/addpost/:id' component={Addpost}/>
+<Route exact path='/:spaceid/:postid' component={Explore}/>
+<Route exact path='/transcribe' component={Audio_link}/>
+
+
         </Switch>
       </div>
     )

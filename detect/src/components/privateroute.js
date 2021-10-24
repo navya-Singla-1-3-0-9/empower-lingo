@@ -1,16 +1,16 @@
 import React, { Component, useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-const PrivateRoute=(props)=>{
+const PrivateRoute=({ component: Component, ...restOfProps })=>{
     const isAuth = localStorage.getItem("user");
 
     //console.log(props.component);
    return( 
-
-    (isAuth!=null?<Route exact path='/practice' component={props.component}/>:<Redirect
-    to={{
-    pathname: "/"
-    }}
-    />)
+    <Route
+    {...restOfProps}
+    render={(props) =>
+      isAuth ? <Component {...props} /> : <Redirect to="/login" />
+    }
+  />
    );
   }
   export default PrivateRoute;
