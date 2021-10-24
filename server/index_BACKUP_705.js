@@ -107,6 +107,7 @@ app.get("/getspace/:id", async (req, res) => {
  let space= await Space.findOne({_id:req.params.id});
  let posts= await Post.find({linkedspace: space.name})
 
+<<<<<<< HEAD
  console.log(posts)
   res.json({ space: space, posts: posts});
 });
@@ -124,15 +125,15 @@ app.get('/getvols',async (req,res)=>{
 app.post('/:postid/addcomment',configuredCors,async (req,res)=>{
   let comment= {commentor: req.user.username, content: req.body.comment}
   await Post.findOneAndUpdate({_id:req.params.postid},{$push:{comments: [comment]}})
-});
+=======
 PythonShell.run('app.py',function (err, result){
   if (err) throw err;
   // result is an array consisting of messages collected 
   //during execution of script.
   console.log('result: ', result.toString());
   res.send(result.toString())
+>>>>>>> 678a3de3 (added speech to text to server)
 });
-
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
