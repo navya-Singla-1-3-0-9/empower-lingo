@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import '../components/css/login.css'
 import {useParams} from "react-router-dom";
+import { Redirect } from 'react-router-dom'
+
 
 const Addpost=()=>{
     const [question,setQuestion]=useState(null);
+	const [redirect,setRedirect]= useState(false);
 	 const handleInputChange = (event) => {
 		const { value} = event.target;
 		setQuestion(value)
@@ -14,7 +17,7 @@ const Addpost=()=>{
 		
 		const data= {question}
 		console.log(JSON.stringify(data))
-    
+		setRedirect(true)
        fetch(`http://localhost:3001/addpost/${id}`, { 
 		   method:'POST',
 		   
@@ -24,12 +27,18 @@ const Addpost=()=>{
 		   })   .then(response => response.json())
 		   .then(json => console.log(json))
 		   .catch(error => console.log('Authorization failed : ' + error.message));
+
           
 	  }
-	
+	const  renderRedirect = () => {
+	  if (redirect) {
+		return <Redirect to={`/space/${id}`} />
+	  }
+	}
 
     return(
       <div className="login">
+		  {renderRedirect()}
             <div className="container fadeInDown">
 	  <div id="formContent">
 	
