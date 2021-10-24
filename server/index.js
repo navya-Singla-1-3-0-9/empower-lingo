@@ -45,7 +45,9 @@ app.post('/transcribe',configuredCors,(req,res)=>{
 app.get('/transcript/:id',(req,res)=>{
   assembly
   .get(`/transcript/${req.params.id}`)
-  .then((result) => res.json({transcript: result.data}))
+  .then((result) => {
+    console.log(result.data);
+    res.json({transcript: result.data.text})})
   .catch((err) => console.error(err));
 
 })
@@ -160,7 +162,9 @@ app.get("/getuser", (req,res)=>{
   if(!req.user){
     res.json({user:"null"});
   }else{
-    res.json({user:req.user.username});
+    let prog = (req.user.mastered.length*100)/26;
+    console.log("prog",prog)
+    res.json({username:req.user.username, email: req.user.email,progress:prog, mastered: req.user.mastered});
   }
   
 })

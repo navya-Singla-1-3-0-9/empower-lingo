@@ -22,7 +22,7 @@ const App = (props) => {
     // Customize the path, i.e. the "completed progress"
     path: {
       // Path color
-      stroke: `rgba(62, 152, 199, ${value})`,
+      stroke: `rgba(255, 102, 179, ${value})`,
       // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
       strokeLinecap: 'butt',
       // Customize transition animation
@@ -36,13 +36,13 @@ const App = (props) => {
     // Customize the text
     text: {
       // Text color
-      fill: '#f88',
+      fill: '#ff99cc',
       // Text size
-      fontSize: '10px',
+      fontSize: '30px',
     },
     // Customize background - only used when the `background` prop is true
     background: {
-      fill: '#3e98c7',
+      fill: '#ff66b3',
     },
   }} />}
         </ProgressProvider>
@@ -56,10 +56,10 @@ function Example(props) {
   return (
   
       <div style={{ marginTop:"3px"}}>
-        <h1>My Progress</h1>
+        <h1 style={{color:"#ff66b3"}}>My Progress</h1>
         <br/>
         <br/>
-        <div style={{  marginLeft:550 ,width: 350 }}>{props.children}</div>
+        <div style={{  marginLeft:100 ,width: 250 }}>{props.children}</div>
         
         <div style={{ marginLeft:20 }}>
           <br/>
