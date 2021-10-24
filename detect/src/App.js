@@ -16,6 +16,7 @@ import NewPostForm from './pages/newPost';
 import Space from './pages/space';
 import Spaces from './pages/allspaces';
 import Addpost from './pages/addpost';
+import Explore from './pages/explorepost';
 
 
 class App extends Component {
@@ -102,6 +103,10 @@ class App extends Component {
           exact={true}/>
           <Route exact path='/addpost/:id'   render={() => (
           <Addpost/>
+          )}
+          exact={true}/>
+              <Route exact path='/:spaceid/:postid'   render={() => (
+          <Explore/>
           )}
           exact={true}/>
         </Switch>
