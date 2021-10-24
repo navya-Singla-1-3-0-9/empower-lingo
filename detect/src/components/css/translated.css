@@ -1,6 +1,9 @@
 img{
-    width:200px;
-    height:200px;
+    width:120px;
+    height:120px;
+   padding: 10px;
+   border: none;
+
 }
 .main{
    padding-left:30%;

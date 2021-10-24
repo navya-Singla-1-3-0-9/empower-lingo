@@ -26,8 +26,14 @@ class Keys extends React.Component{
         <div style={{backgroundColor:"black"}}>
               <NavBar/>
         <div className="container">
+<<<<<<< HEAD
           
             <textarea value={this.state.inputVal} style={{ marginBottom:"10%"}}></textarea>
+=======
+            <textarea value={this.state.inputVal} style={{color:"black" ,height:"200px", marginBottom:"14%" ,background: "white", /* fallback for old browsers */
+
+}}></textarea>
+>>>>>>> 73ec6679 (styled asl to eng)
         <div className="keys">
             {   
                 letters.map((letter,index)=>{
@@ -35,8 +41,9 @@ class Keys extends React.Component{
                 })
             }
         </div>
+        <br></br>
         <div>
-        <button className= "space btn-block" onClick={this.space}>Space</button>
+        <button className= "btn btn-warning" onClick={this.space}>Space</button>
         </div>
         
         </div>
