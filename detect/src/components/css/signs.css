@@ -9,8 +9,9 @@
     color: blue;
     user-select: none;
     cursor: pointer;
+
   }
-  img{
+  .sign-img{
     width:500px;
     height:400px;
   }

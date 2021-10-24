@@ -27,7 +27,7 @@ function App(props) {
  
  
   return (
-    <div className="App">
+    <div className="Appx">
       <header className="App-header">
       <p>{!data ? "Loading..." : data}</p>
       <Cam letter={letter}/>
