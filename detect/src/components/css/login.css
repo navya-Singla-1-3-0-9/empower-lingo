@@ -109,7 +109,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text], input[type="password"] {
+input[type=text], input[type="password"],textarea {
   background: transparent;
   color: ;
   padding: 15px 32px;
@@ -129,12 +129,14 @@ input[type=text], input[type="password"] {
 
  
 
-input[type=text]:focus, input[type="password"]:focus {
+input[type=text]:focus, input[type="password"]:focus, textarea:focus {
   box-shadow: 0 0 40px skyblue;
   color: #fff;
   
 }
-
+textarea{
+  height:300px;
+}
 
        /* ANIMATIONS */
 

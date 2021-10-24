@@ -76,11 +76,17 @@ app.get('/results',configuredCors,(req,res)=>{
     })*/
  });
 
-const Volunteer = require('./models/volunteerschema.js')
+const Volunteer = require('./models/volunteerschema.js');
+const Space = require('./models/spaceschema.js')
 app.post('/volunteer',configuredCors,async (req,res)=>{
   console.log(req.body);
   let nv= new Volunteer({full_name: req.body.username,email:req.body.email})
   await nv.save();
+  
+});
+app.post('/addspace',configuredCors,async (req,res)=>{
+  let space = new Space({name:req.body.space, image: req.body.image, content: req.body.content});
+  await space.save();
   
 })
 
