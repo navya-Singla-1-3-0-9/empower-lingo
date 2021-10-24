@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css?family=Kalam");
+
+/* Global */
+
+*:focus {
+    outline: none;
+} 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kalam';
+  height: 100vh;
+}
+
+a {
+  color: #92badd;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display:inline-block;
+  margin: 40px 8px 10px 8px; 
+  color: #cccccc;
+}
+
+
+
+/* STRUCTURE */
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+#formContent {
+  border-radius: 3px;
+  border: 3px solid skyblu;
+  background: #252d4a;
+  padding: 0;
+  width: 90%;
+  max-width: 350px;
+  position: relative;
+  box-shadow: 0 0 10px #464647;
+  text-align: center;
+}
+
+#formFooter {
+  background: transparent;
+  border-top: 1px solid #dce8f1;
+  padding: 25px;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+}
+
+h2.inactive {
+  color: #cccccc;
+  cursor: pointer;
+}
+
+h2.active {
+  color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+
+/* FORM STYLING */
+
+input[type=button], input[type=submit], input[type="reset"]  {
+  background: transparent;
+  border: none;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  box-shadow: 0 0 1px skyblue;
+  border-radius: 50px;
+  margin: 5px 20px 40px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  box-shadow: 0 0 10px 0 skyblue;
+  cursor: pointer;
+  color: #fff;
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  transform: scale(0.95);
+}
+
+input[type=text], input[type="password"] {
+  background: transparent;
+  color: ;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: none;
+  box-shadow: 0 0 1px skyblue;
+  transition: all 0.5s ease-in-out;
+  border-radius: 20px;
+  margin-bottom: 10%;
+  
+}
+
+ 
+
+input[type=text]:focus, input[type="password"]:focus {
+  box-shadow: 0 0 40px skyblue;
+  color: #fff;
+  
+}
+
+
+       /* ANIMATIONS */
+
+/* Fade-in-down Animation */
+
+.fadeInDown {  
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+ 
+ 50%{
+  opacity: .5;
+  transform: translate3d(0, 20%, 0);
+ }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Fade-in Animation */
+
+@keyframes fadeIn {
+ from { 
+  opacity:0; 
+ } 
+
+ to {
+  opacity:1; 
+  } 
+}
+
+.fadeIn {
+  opacity:0;
+  animation: fadeIn ease-in 0.5s;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+
+.fadeIn.first {
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  animation-delay: 1s;
+}
+
+/* Fade-in Animation */
+
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #fff;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}
+
