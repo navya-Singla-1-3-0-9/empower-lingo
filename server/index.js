@@ -143,6 +143,7 @@ app.post('/volunteer',configuredCors,async (req,res)=>{
   await nv.save();
   
 });
+
 app.post('/addspace',configuredCors,async (req,res)=>{
   let space = new Space({name:req.body.space, image: req.body.image, content: req.body.content});
   await space.save();
