@@ -13,6 +13,7 @@ class Keys extends React.Component{
     displayLetter=(event)=>{
         console.log(event.target)
         this.setState({inputVal:this.state.inputVal+event.target.alt})
+        console.log(this.state.inputVal)
     }
     space=()=>{
         this.setState({inputVal:this.state.inputVal+" "})
@@ -22,7 +23,7 @@ class Keys extends React.Component{
     let i=0;
     return (
         <div className="container">
-            <textarea value={this.state.inputVal}></textarea>
+            <textarea value={this.state.inputVal} style={{color:"black", marginBottom:"10%"}}></textarea>
         <div className="keys">
             {   
                 letters.map((letter,index)=>{
