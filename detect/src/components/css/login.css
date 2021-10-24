@@ -2,11 +2,11 @@
 
 /* Global */
 
-.login:focus {
+*:focus {
     outline: none;
 } 
 
-.login{
+* {
   box-sizing: border-box;
 }
 

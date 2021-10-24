@@ -9,6 +9,7 @@ import Quiz from './pages/quiz';
 import Login from './pages/login';
 import Register from './pages/register';
 import Jobs from './pages/jobs';
+import Volunteer from './pages/volunteer';
 
 
 class App extends Component {
@@ -64,7 +65,10 @@ class App extends Component {
           <Jobs/>
           )}
           exact={true}/>
-
+<Route exact path='/volunteer'   render={() => (
+          <Volunteer/>
+          )}
+          exact={true}/>
         </Switch>
       </div>
     )
