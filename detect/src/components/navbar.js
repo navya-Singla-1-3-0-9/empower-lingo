@@ -11,7 +11,16 @@ import {
   NavLink
 } from 'reactstrap';
 
+
+import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Dropdown } from 'react-bootstrap';
+
+const actions = [
+  { label: "Add", value: 1 },
+  { label: "Edit", value: 2 },
+  { label: "Delete", value: 3 }
+];
 
 class NavBar extends Component {
   constructor(){
@@ -55,15 +64,53 @@ return (
       </li>
       </div>
       <div className="col-md-3">
+      <li><Dropdown>
+        <Dropdown.Toggle 
+        variant="secondary btn-sm" 
+        id="dropdown-basic">
+            TRANSLATE
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu >
+            <Dropdown.Item href="/translate" >ASL TO ENGLISH</Dropdown.Item>
+            <Dropdown.Item href="/translate1">ENGLISH TO ASL</Dropdown.Item>
+            
+        </Dropdown.Menu>
+        </Dropdown>
+        </li>
+      </div>
+      <div className="col-md-3">
       <li>
-        <Link to="/translate">Translator</Link>
+        <Link to="/jobs">Jobs</Link>
       </li>
       </div>
       <div className="col-md-3">
       <li>
-        <Link to="/practice">Practice</Link>
+        <Link to="/volunteer">Volunteer</Link>
       </li>
       </div>
+      <div className="col-md-3">
+      <li>
+        <Link to="/newspace">News</Link>
+      </li>
+      </div>
+      <div className="col-md-3">
+        <li><Dropdown>
+        <Dropdown.Toggle 
+        variant="secondary btn-sm" 
+        id="dropdown-basic">
+            Practice
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu >
+            <Dropdown.Item href="/practice" >Practice ASL Letters</Dropdown.Item>
+            <Dropdown.Item href="/talk">Talk</Dropdown.Item>
+            <Dropdown.Item href="/quiz">Quiz</Dropdown.Item>
+            <Dropdown.Item href="/signs">Signs</Dropdown.Item>
+        </Dropdown.Menu>
+        </Dropdown>
+        </li>
+</div>
       </div>
     </ul>
     </Collapse>
