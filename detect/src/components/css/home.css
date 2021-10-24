@@ -1,0 +1,22 @@
+.home{
+    height: 100%;
+    min-height: 100vh;
+    background-image: url('https://i.pinimg.com/originals/63/dc/f1/63dcf1695fbb1bd8498b5718b2b024ec.jpg');
+    background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+    text-align: center;
+}
+.home-btn{
+    padding:10px 30px;
+   margin:20px;
+}
+.home a{
+    margin-left: 200px;
+    margin:1%;
+}
+.home h1{
+    margin-top:10%;
+}

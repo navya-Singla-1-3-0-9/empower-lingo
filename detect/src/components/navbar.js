@@ -65,7 +65,7 @@ return (
   <Navbar className="Navbar" expand="lg">
   <div className="toggler" onClick={toggle} ><GiHamburgerMenu size={50}/></div>
         <Collapse isOpen={this.state.isOpen} navbar >
-    <h2>btf</h2>
+    <h2>LN</h2>
     <ul>
       <div className="row">
       <div className="col-lg-2">
@@ -108,7 +108,7 @@ return (
         <div className={this.state.showemp==false?"hide dd-menu":"show dd-menu"}>
           <Link to="/Jobs">Jobs near me</Link>
           <br/>
-          <Link to="/Blogs">BLOG</Link>
+          <Link to="/Blogs">Blogs</Link>
           <br/>
           <Link to="/volunteer">Volunteer</Link>
           <br/>
