@@ -1,4 +1,4 @@
-# LingoAlly
+# EmpowerLingo
 
 Prototype: https://infinite-brook-23552.herokuapp.com/
 ## Inspiration
