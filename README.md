@@ -60,7 +60,7 @@ Our Amazing teamwork and a web app to empower the deaf community!
 - As a result of this project, we are comfortable with React.js including React hooks, Props, and React-state. We know how to connect our website to various APIs and achieve perfect results with minimum code!
 - Non-technically, I think we came to recognize the challenges faced by deaf individuals worldwide, got ourselves familiar with Sign-language and developed a sense of appreciation towards them!
 
-## What's next for LingoAlly
+## What's next for Empower-Lingo
 According to us, this project has tremendous potential to grow.
 - We can have a chrome extension which transcribes youtube/online videos to ASL in real-time!
 - Integrating real-time Sign language detection into Google-meet/Zoom meetings.
