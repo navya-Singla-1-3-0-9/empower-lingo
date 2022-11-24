@@ -1,6 +1,6 @@
 # EmpowerLingo
 
-Prototype: https://infinite-brook-23552.herokuapp.com/
+Prototype: https://fingerspell-api.onrender.com/
 ## Inspiration
 Over 5% of the world’s population  – 432 million adults and 34 million children have impaired hearing. For deaf people, access to sign language is key to breaking down communication barriers and participating in society just like anyone else. The right of deaf people to get equal access for schools, medical treatment, or courts hinges on their opportunity to use their language, and the ability of their loved ones, educators, and hospital staff to provide them equal opportunities majorly depends upon efficient usage of Sign Language. Therefore, an accessible solution available in virtual environment for enabling the hard-of-hearing individuals to learn sign language: a key step towards accessing equal opportunities is needed.
 Also, As many as 90 percent of deaf children are born to hearing parents, which can make learning sign language a family affair. We wanted to develop a solution to ease this process and make learning ASL a fun team activity. Parents and Guardians who learn ASL along with their child often find it easier to communicate on a deeper level with their deaf child. 
@@ -8,7 +8,7 @@ Today more than ever it’s common for educators to have children who are deaf o
 This inspired us to develop LingoAlly- a tool that not only allows deaf people to learn sign language through features for practicing signs, practicing communication with ASL, quizzes, etc. but also connect and interact with a wider community, learn from their experiences and share their opinions with them. We aim to empower the users financially by making them aware of the jobs so that they never miss out on opportunities, and simultaneously enhance workplace **diversity and inclusion** and help them to identify their rights by scraping out the best of the blogs from the internet. Users can also volunteer through our website or connect with the volunteers directly!
 
 ## What it does
-#### LingoAlly -a complete Solution for the Empowerment of the hard-of-hearing Community!
+#### EmpowerLingo -a complete Solution for the Empowerment of the hard-of-hearing Community!
 The features of our app include:
 #### Practice ASL alphabets:
 The starting point of any language- mastering alphabets. We trained our model using Tensoreflow.js and used HandPose and Fingerpose to provide the user a real-time video interface that detects the letter they are signing and enables them to master letters step by step. 
